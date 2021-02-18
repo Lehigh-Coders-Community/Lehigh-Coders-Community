@@ -4,7 +4,6 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-sass",
-    "gatsby-plugin-mdx",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -13,5 +12,28 @@ module.exports = {
       },
       __key: "pages",
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "activities",
+        path: "./content/activities",
+      },
+      _key: "activities"
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./content/pages",
+      },
+      _key: "pages"
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+      },
+    },
+    `gatsby-plugin-react-helmet`
   ],
 };
