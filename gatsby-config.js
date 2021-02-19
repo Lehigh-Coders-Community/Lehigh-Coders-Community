@@ -3,7 +3,6 @@ module.exports = {
 		title: "frontend",
 	},
 	plugins: [
-		"gatsby-plugin-sass",
 		{
 			resolve: "gatsby-source-filesystem",
 			options: {
@@ -37,6 +36,6 @@ module.exports = {
 		"gatsby-plugin-react-helmet",
 		"gatsby-plugin-eslint",
 		"gatsby-plugin-lint-queries",
-		"gatsby-plugin-sass"
+		"gatsby-plugin-postcss"
 	],
 };

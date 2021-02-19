@@ -31,6 +31,9 @@ const ActivityLayout = ({ data }) => {
 				<meta charSet="utf-8" />
 				<title>{title}</title>
 			</Helmet>
+			<div className="border-grey-12 xl-border-red">
+				<h1 className="text-lg">Hello</h1>
+			</div>
 			<small>(this is from the activity layout)</small>
 			<Link to="/activities">All Activities</Link>
 			<MDXRenderer>{body}</MDXRenderer>
