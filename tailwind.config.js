@@ -1,6 +1,6 @@
 module.exports = {
 	purge: ["./src/**/*.{js,jsx,ts,tsx}"],
-	darkMode: false, // or 'media' or 'class'
+	darkMode: "media", // or 'media' or 'class'
 	theme: {
 		extend: {
 			transitionProperty: {
@@ -10,6 +10,7 @@ module.exports = {
 	},
 	variants: {
 		extend: {},
+		container: []
 	},
 	plugins: [],
 };

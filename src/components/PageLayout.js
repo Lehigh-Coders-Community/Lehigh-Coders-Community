@@ -24,11 +24,13 @@ const HomeLayout = ({ data }) => {
 	const { body, frontmatter: { title } } = data.mdx;
 	return (
 		<ShortcodeProvider>
-			<Helmet>
-				<meta charSet="utf-8" />
-				<title>{title}</title>
-			</Helmet>
-			<MDXRenderer>{body}</MDXRenderer>
+			<>
+				<Helmet>
+					<meta charSet="utf-8" />
+					<title>{title}</title>
+				</Helmet>
+				<MDXRenderer>{body}</MDXRenderer>
+			</>
 		</ShortcodeProvider>
 	);
 };

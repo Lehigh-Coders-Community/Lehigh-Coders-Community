@@ -12,7 +12,7 @@ export default function Layout({ children }) {
 	}
 
 	const NavLink = ({ children, ...props }) => (
-		<Link {...props} className="px-4 py-4 block hover:bg-gray-200" onClick={toggleDrawer}>{children}</Link>
+		<Link {...props} className="px-4 py-4 lg:mx-2 lg:py-2 lg:my-2 block hover:bg-gray-200" onClick={toggleDrawer}>{children}</Link>
 	);
 
 	const socialLinks = (
@@ -25,6 +25,7 @@ export default function Layout({ children }) {
 
 	const navLinks = (
 		<>
+			<NavLink to="/">Home</NavLink>
 			<NavLink to="/about">About</NavLink>
 			<NavLink to="/activities">Activities</NavLink>
 		</>
@@ -33,16 +34,21 @@ export default function Layout({ children }) {
 	return (
 		<>
 			<header>
-				<div className="bg-blue-400 h-32">
-					<div className="hidden">{socialLinks}</div>
-				</div>
-				<div className="container mx-auto px-2 mb-4 border-b py-4">
-					<div className="h-56 w-56 mx-auto -mt-28 bg-white rounded-full shadow-md px-1 py-1"></div>
-					<h1 className="mt-8 text-2xl font-bold text-center">Lehigh Coders Community</h1>
+				<div className="bg-gradient-to-r from-blue-400 to-blue-500 h-32"></div>
+				<div className="mx-auto lg:flex max-w-5xl">
+					<div className="h-56 w-56 mx-auto -mt-28 bg-white rounded-full lg:mx-0"></div>
+					<div className="lg:flex-grow lg:ml-4">
+						<div className="lg:flex align-items-center border-b align-items-center">
+							<h1 className="mt-4 lg:mt-0 text-2xl font-bold text-center lg:text-left p-4 lg:flex-grow">Lehigh Coders Community</h1>
+							<div className="hidden lg:flex text-right lg:align-items-center items-center">{socialLinks}</div>
+						</div>
+						<nav className="hidden lg:flex">
+							{navLinks}
+						</nav>
+					</div>
 				</div>
 			</header>
-			<p className="text-center">(breadcrumbs)</p>
-			<div className={`fixed w-screen bg-white transition-all transform ${drawerOpen ? "translate-y-0 bottom-0" : "translate-y-full bottom-24"}`}>
+			<div className={`fixed w-screen bg-white transition-all transform lg:hidden ${drawerOpen ? "translate-y-0 bottom-0" : "translate-y-full bottom-24"}`}>
 				<div className="px-4 h-24 flex items-center">
 					<div className="flex flex-auto">
 						{socialLinks}
@@ -53,8 +59,7 @@ export default function Layout({ children }) {
 					{navLinks}
 				</div>
 			</div>
-			{/* <div className={`bg-black bg-opacity-50 fixed top-0 w-full h-full z-0 ${drawerOpen ? "block": "hidden"}`} onClick={toggleDrawer}></div> */}
-			<main className="container mx-auto px-2 py-2 my-8 flex-auto">{children}</main>
+			<main className="max-w-5xl mx-auto p-4 my-2 flex-auto">{children}</main>
 		</>
 	);
 }
