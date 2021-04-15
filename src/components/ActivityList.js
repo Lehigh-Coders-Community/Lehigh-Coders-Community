@@ -1,5 +1,6 @@
 import { graphql, Link, useStaticQuery } from "gatsby";
 import React from "react";
+import Card from "./Card";
 
 const ActivityList = () => {
 
@@ -31,9 +32,9 @@ const ActivityList = () => {
 			{nodes.map(node => (
 				<Link to={`/activities/${node.slug}`} key={node.slug}>
 					<article>
-						<h2>{node.frontmatter.title}</h2>
-						<small>{node.frontmatter.date}</small>
-						<p>{node.frontmatter.description}</p>
+						<Card title={node.frontmatter.title} subtitle={node.frontmatter.date}>
+							<p>{node.frontmatter.description}</p>
+						</Card>
 					</article>
 				</Link>
 			))}
